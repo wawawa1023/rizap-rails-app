@@ -1,5 +1,24 @@
 # README
 
+## 環境構築手順
+
+### ビルド
+```bash
+docker compose build --no-cache
+```
+
+### コンテナを起動
+```bash
+docker compose up
+```
+
+### DB作成
+```bash
+docker compose exec web rails db:create
+```
+
+http://localhost:3000/ にアクセスしてブラウザにプロジェクトが表示されることを確認する
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
