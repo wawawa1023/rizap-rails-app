@@ -9,7 +9,7 @@ docker compose build --no-cache
 
 ### コンテナを起動
 ```bash
-docker compose up
+docker compose up -d
 ```
 
 ### DB作成
