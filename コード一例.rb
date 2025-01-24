@@ -50,7 +50,10 @@ end
 
 <%= render 'form', user: @user %>
 
-#createアクション
+#app/views/index.html.erb の最終行に以下を追加
+<%= link_to '新規登録', new_user_path %>
+
+%>#createアクション
 def create
   @user = User.new(user_params)
   if @user.save
@@ -60,7 +63,11 @@ def create
   end
 end
 
-praivate
+private
   def user_params
     params.require(:user).permit(:name, :ruby)
   end
+
+#バリデーション
+validates :name, presence: true
+validates :ruby, presence: true
