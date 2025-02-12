@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <h1 class="text-center">新しいタスクを追加</h1>
 
-  <%= form_with model: @user, local: true, class: "card p-4 shadow" do |f| %>
+  <%= form_with model: @user,  class: "card p-4 shadow" do |f| %>
     <div class="mb-3">
       <%= f.label :title, "タスクのタイトル", class: "form-label" %>
       <%= f.text_field :title, class: "form-control", placeholder: "例: 買い物リストを作る" %>

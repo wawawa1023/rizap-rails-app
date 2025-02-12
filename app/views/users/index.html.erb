@@ -27,7 +27,9 @@
           <td>
             <%= link_to "詳細", user_path(user), class: "btn btn-info btn-sm" %>
             <%= link_to "編集", edit_user_path(user), class: "btn btn-warning btn-sm" %>
-            <%= link_to "削除", user_path(user), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm" %>
+            <%= form_with model: user, method: :delete, data: { turbo_confirm: "本当に削除しますか？" }, class: "d-inline" do %>
+              <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

@@ -11,7 +11,9 @@
         </span>
       </p>
       <a href="<%= edit_user_path(@user) %>" class="btn btn-warning">編集</a>
-      <%= link_to "削除", user_path(@user), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+      <%= form_with model: @user, method: :delete, data: { turbo_confirm: "本当に削除しますか？" }, class: "d-inline" do %>
+        <%= submit_tag "削除", class: "btn btn-danger" %>
+      <% end %>
       <a href="<%= users_path %>" class="btn btn-secondary">戻る</a>
     </div>
   </div>
